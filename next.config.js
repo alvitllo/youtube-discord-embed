@@ -1,4 +1,4 @@
-const cdnURL = "https://ray1337-yt-dc-embed-static-assets.b-cdn.net/";
+const cdnURL = "https://yt.vitastudio.pro";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
