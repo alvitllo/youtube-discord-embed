@@ -1,9 +1,5 @@
-const cdnURL = "https://ray1337-yt-dc-embed-static-assets.b-cdn.net/";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: process.env.NODE_ENV !== "development" ? cdnURL : undefined,
-
   reactStrictMode: true,
 
   poweredByHeader: false,
@@ -29,7 +25,8 @@ const nextConfig = {
       headers: [{
         key: "Content-Security-Policy",
         value: [
-          ['default-src', "'self'", cdnURL].concat(process.env.NODE_ENV === "development" ? ["'unsafe-eval'"] : []),
+          ['default-src', "'none'"].concat(process.env.NODE_ENV === "development" ? ["'unsafe-eval'"] : []),
+          ['script-src', "'self'"],
           ['block-all-mixed-content'],
           ['upgrade-insecure-requests']
         ]
